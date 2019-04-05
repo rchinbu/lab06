@@ -16,4 +16,14 @@ public class ConsTree<T> extends BinaryTree {
 		// to figure out how to use this
 		this(data, new EmptyTree<T>(), new EmptyTree<T>());
 	}
+	public String toString( String indent ) {
+		return right.toString( indent + "   " ) + "\n" + 
+		       indent + "/\n" + 
+		       indent + data + "\n" + 
+		       indent + "\\" + 
+		       left.toString( indent + "   ");
+	    }
+	    public String toString() {
+		return toString("");
+	}
 }
